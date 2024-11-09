@@ -5,7 +5,7 @@ function NavBar() {
       <h1 className="text-3xl font-bold">
         Lexie<span className="text-[#00FF9C]">.</span>
       </h1>
-      <nav className="text-2xl flex gap-8 ">
+      <nav className="text-2xl flex gap-8">
         <Link href="/" className="hover:underline hover:decoration-[#00FF9C]">
           Home
         </Link>
