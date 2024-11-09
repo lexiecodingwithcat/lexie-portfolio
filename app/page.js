@@ -1,10 +1,9 @@
-import Link from "next/link";
+import NavBar from "@/components/navBar";
 
 function Home() {
   return (
-    <div>
-      welcome home!
-      <Link href="/service">Service</Link>
+    <div className="px-32 pt-10 font-mono">
+      <NavBar />
     </div>
   );
 }
