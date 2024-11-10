@@ -32,5 +32,49 @@ body {
   }
 }
 
+/* atom animation */
+.sphere{
+  width: 400px;
+  height: 400px;
+  border: 4px dotted #fff;
+  border-radius: 50%;
+  position: relative;
+  transform-style: preserve-3d;
+  -ms-transform-style: none;
+  transition: transform 0.5s;
+}
 
+.sphere:before, .sphere:after{
+  width: 400px;
+  height: 400px;
+  border: 2px dotted #fff;
+  border-radius: 50%;
+  content:"";
+  left:0;
+  top:0;
+  position: absolute;
+  opacity: 0; 
+  transition: opacity 0.3s;
+}
+.sphere:before{
+  transform: rotateX(-66.66deg);
+}
+
+.sphere:after{
+  transform: rotateX(66.66deg);
+}
+.sphere:hover{
+  animation: spin 15s linear infinite;
+}
+.sphere:hover:before, .sphere:hover:after{
+  opacity: 1;
+}
+/* @keyframes spin{
+  0%{
+    transform: rotateX(1deg) rotateY(1deg) rotateZ(1deg);
+  }
+  100%{
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+} */
 
