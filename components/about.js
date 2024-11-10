@@ -1,4 +1,4 @@
-import MyPhoto from "./myPhoto";
+import ProfilePhoto from "./profilePhoto";
 import SummaryInfo from "./summaryInfo";
 
 function About() {
@@ -6,7 +6,7 @@ function About() {
     <div className="mt-20 flex gap-20">
       <SummaryInfo />
 
-      <MyPhoto />
+      <ProfilePhoto />
     </div>
   );
 }
