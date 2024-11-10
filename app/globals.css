@@ -4,6 +4,32 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+}
+
+.typing-text{
+  color:#00FF9C;
+  position: relative;
+
+}
+.typing-animation:before{
+  content:"";
+  position: absolute;
+  top:0;
+  left:0;
+  height: 100%;
+  width: 60%;
+  background-color: #1e1e1e;
+  border-left: 2px solid #00FF9C;
+  animation: animate 4s steps(10) infinite;
+}
+@keyframes animate{
+  40%,60%{
+    left: 60%;
+  }
+  100%{
+    left: 0%;
+  }
 }
 
 
