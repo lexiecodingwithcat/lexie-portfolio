@@ -5,15 +5,9 @@ function NavBar() {
       <h1 className="text-3xl font-bold">
         Lexie<span className="text-[#00FF9C]">.</span>
       </h1>
-      <nav className="text-2xl flex gap-8">
+      <nav className="text-2xl flex gap-8 items-center">
         <Link href="/" className="hover:underline hover:decoration-[#00FF9C]">
           Home
-        </Link>
-        <Link
-          href="/service"
-          className="hover:underline hover:decoration-[#00FF9C]"
-        >
-          Service
         </Link>
         <Link
           href="/resume"
@@ -27,7 +21,9 @@ function NavBar() {
         >
           Work
         </Link>
-        {/* <Link href="/work">Hire me</Link> */}
+        <button className=" bg-[#00FF9C] rounded-full px-3 py-1 text-[#1e1e1e]">
+          Hire me
+        </button>
       </nav>
     </header>
   );
