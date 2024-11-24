@@ -7,13 +7,13 @@ import ResumeContent from "@/components/resumeContent";
 function Resume() {
   const [activeTab, setActiveTab] = useState("Experience");
   function handleActiveTab(tab) {
-    console.log(tab);
+    // console.log(tab);
     setActiveTab(tab);
   }
   return (
     <div className="px-40 pt-10 ">
       <NavBar />
-      <div className="mt-20 flex gap-14 px-5 py-10">
+      <div className="mt-20 flex px-5 py-10 gap-10">
         {/* cate bar */}
         <ResumeCate changeActiveTab={handleActiveTab} />
         {/* content */}

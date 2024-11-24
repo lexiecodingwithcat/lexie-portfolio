@@ -2,7 +2,7 @@ import MyExperienceItem from "./myExperienceItem";
 
 function MyExperience() {
   return (
-    <div className="w-full">
+    <div>
       <div>
         <h2 className="text-3xl font-semibold">My experience</h2>
         <p className="text-[#808080] mt-5">
@@ -10,7 +10,7 @@ function MyExperience() {
           apply best practices to deliver high-quality projects.
         </p>
       </div>
-      <div className="flex gap-10">
+      <div className="flex gap-16 px-5">
         <MyExperienceItem
           time="Sep 2024 - current"
           title="IT support"
