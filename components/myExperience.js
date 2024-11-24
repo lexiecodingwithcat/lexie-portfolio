@@ -2,7 +2,7 @@ import MyExperienceItem from "./myExperienceItem";
 
 function MyExperience() {
   return (
-    <div>
+    <div className="w-full">
       <div>
         <h2 className="text-3xl font-semibold">My experience</h2>
         <p className="text-[#808080] mt-5">
