@@ -2,7 +2,7 @@ import Timeline from "./timeline";
 
 function myEducation() {
   return (
-    <div>
+    <div className="px-[20px]">
       <div>
         <h2 className="text-3xl font-semibold">My education</h2>
         <p className="text-[#808080] mt-5">

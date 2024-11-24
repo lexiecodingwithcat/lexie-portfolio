@@ -13,7 +13,7 @@ function Resume() {
   return (
     <div className="px-40 pt-10 ">
       <NavBar />
-      <div className="mt-20 flex px-5 py-10 gap-10">
+      <div className="mt-20 flex px-5 py-10 gap-14">
         {/* cate bar */}
         <ResumeCate changeActiveTab={handleActiveTab} />
         {/* content */}
