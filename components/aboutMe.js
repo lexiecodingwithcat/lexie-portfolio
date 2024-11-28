@@ -1,5 +1,15 @@
+"use client";
+
+import { useUserAuth } from "@/app/_utils/auth-context";
+
 function AboutMe() {
-  const { user } = useAuth0();
+  const { user, googleSignIn, firebaseSignOut } = useUserAuth;
+  const logIn = async function () {
+    await googleSignIn();
+  };
+  const logOut = async function () {
+    await firebaseSignOut();
+  };
 
   return (
     <div className="px-[20px]">
@@ -15,17 +25,24 @@ function AboutMe() {
         </p>
       </div>
       <div className="mt-10 text-lg">
-        <p>
+        {user ? (
           <button
-            className="rounded-lg px-3 py-2 font-semibold mr-2 bg-[#00FF9C] text-[#1e1e1e] "
-            onClick={() => {
-              alert("Please log in to leave a comment");
-            }}
+            className="rounded-lg px-3 py-2 font-semibold mr-2 bg-[#00FF9C] text-[#1e1e1e]"
+            onClick={logOut}
           >
-            Log in
+            Log out
           </button>
-          to leave a comment
-        </p>
+        ) : (
+          <p>
+            <button
+              className="rounded-lg px-3 py-2 font-semibold mr-2 bg-[#00FF9C] text-[#1e1e1e] "
+              onClick={logIn}
+            >
+              Log in
+            </button>
+            to leave a comment
+          </p>
+        )}
       </div>
     </div>
   );

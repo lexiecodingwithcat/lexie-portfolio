@@ -19,12 +19,14 @@ export const AuthContextProvider = ({ children }) => {
   const firebaseSignOut = () => {
     return signOut(auth);
   };
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);
     });
     return unsubscribe;
   }, [user]);
+
   return (
     <AuthContext.Provider value={{ user, googleSignIn, firebaseSignOut }}>
       {children}
