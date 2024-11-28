@@ -1,4 +1,5 @@
-import ThreeScene from "./threeDCube";
+import Image from "next/image";
+import IconCube from "./iconCube";
 function mySkill() {
   return (
     <div className="px-[20px]">
@@ -9,8 +10,19 @@ function mySkill() {
           apply best practices to deliver high-quality projects.
         </p>
       </div>
-      <div>
-        <ThreeScene />
+      <div className="flex my-[25px]">
+        {/* <div className="flex flex-col justify-center items-center border rounded-lg px-5 py-2">
+          <Image src="/icons/html-5.png" alt="html" width={50} height={50} />
+          <p>HTML</p>
+        </div> */}
+        <IconCube imagePath="html.png" />
+        <IconCube imagePath="css.png" />
+        <IconCube imagePath="javascript.png" />
+        <IconCube imagePath="react.png" />
+        <IconCube imagePath="sql.png" />
+        <IconCube imagePath="python.png" />
+        <IconCube imagePath="java.png" />
+        <IconCube imagePath="cSharp.png" />
       </div>
     </div>
   );
