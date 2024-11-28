@@ -3,7 +3,7 @@
 import { useUserAuth } from "@/app/_utils/auth-context";
 
 function AboutMe() {
-  const { user, googleSignIn, firebaseSignOut } = useUserAuth;
+  const { user, googleSignIn, firebaseSignOut } = useUserAuth();
   const logIn = async function () {
     await googleSignIn();
   };
