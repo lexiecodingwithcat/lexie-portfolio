@@ -1,4 +1,6 @@
 function AboutMe() {
+  const { user } = useAuth0();
+
   return (
     <div className="px-[20px]">
       <div>
@@ -14,8 +16,13 @@ function AboutMe() {
       </div>
       <div className="mt-10 text-lg">
         <p>
-          <button className="rounded-lg px-3 py-2 font-semibold mr-2 bg-[#00FF9C] text-[#1e1e1e]">
-            Sign in
+          <button
+            className="rounded-lg px-3 py-2 font-semibold mr-2 bg-[#00FF9C] text-[#1e1e1e] "
+            onClick={() => {
+              alert("Please log in to leave a comment");
+            }}
+          >
+            Log in
           </button>
           to leave a comment
         </p>
