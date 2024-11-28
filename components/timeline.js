@@ -56,7 +56,7 @@ function Timeline() {
           </p>
           <p>
             <span className="text-[#00FF9C] mr-1">&middot;</span>
-            The "excellent leader of students' union" award
+            The excellent leader of students&apos; union award
           </p>
         </div>
       </div>
