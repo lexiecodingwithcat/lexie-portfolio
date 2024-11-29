@@ -1,12 +1,17 @@
-import { deleteComment } from "@/_service/comments-service";
+import { getComments, deleteComment } from "@/_service/comments-service";
 import { useUserAuth } from "@/_utils/auth-context";
 
-function ExistingTestmonial({ comments }) {
+function ExistingTestmonial({ comments, setComments }) {
   const { user } = useUserAuth();
 
-  const handleDeleteComment = (comment) => {
+  const handleDeleteComment = async (comment) => {
     console.log("delete comment:", comment.id);
     deleteComment(user, comment);
+    // const updatedComments = await getComments();
+    // setComments(updatedComments);
+    setComments((prevComments) =>
+      prevComments.filter((prevComment) => prevComment.id !== comment.id)
+    );
   };
 
   return (
@@ -14,7 +19,7 @@ function ExistingTestmonial({ comments }) {
       {comments.map((comment) => (
         <li
           className="px-5 py-5 border bg-white rounded-md relative"
-          key={comment.timestamp}
+          key={comment.id}
         >
           <div className="absolute top-0 right-2">
             {user != null && user.uid === comment.userId && (

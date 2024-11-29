@@ -60,7 +60,7 @@ function MyTestimonials() {
         )}
       </div>
       {/* display exsiting testmonials */}
-      <ExistingTestmonial comments={comments} />
+      <ExistingTestmonial comments={comments} setComments={setComments} />
     </div>
   );
 }
