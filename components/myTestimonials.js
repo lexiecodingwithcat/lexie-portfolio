@@ -1,7 +1,8 @@
 "use client";
 
-import { useUserAuth } from "@/app/_utils/auth-context";
+import { useUserAuth } from "@/_utils/auth-context";
 import Comment from "./comment";
+import ExistingTestmonial from "./existingTestmonial";
 function MyTestimonials() {
   const { user, googleSignIn, firebaseSignOut } = useUserAuth();
   const logIn = async function () {
@@ -46,6 +47,7 @@ function MyTestimonials() {
         )}
       </div>
       {/* display exsiting testmonials */}
+      <ExistingTestmonial />
     </div>
   );
 }
