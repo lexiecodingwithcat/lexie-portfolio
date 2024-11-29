@@ -33,3 +33,12 @@ export async function addComment(user, comment) {
     console.error("faild to add", error);
   }
 }
+
+// delete comment
+export async function deleteComment(comment) {
+  try {
+    await deleteDoc(doc(db, "messages", comment.id));
+  } catch (error) {
+    console.error("Error removing document: ", error);
+  }
+}
