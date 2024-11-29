@@ -11,10 +11,6 @@ function mySkill() {
         </p>
       </div>
       <div className="flex my-[25px] gap-10 flex-wrap">
-        {/* <div className="flex flex-col justify-center items-center border rounded-lg px-5 py-2">
-          <Image src="/icons/html-5.png" alt="html" width={50} height={50} />
-          <p>HTML</p>
-        </div> */}
         <IconCube imagePath="html.png" />
         <IconCube imagePath="css.png" />
         <IconCube imagePath="javascript.png" />

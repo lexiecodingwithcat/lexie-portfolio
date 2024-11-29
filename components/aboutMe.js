@@ -1,7 +1,3 @@
-"use client";
-
-import { useUserAuth } from "@/app/_utils/auth-context";
-
 function AboutMe() {
   return (
     <div className="px-[20px]">

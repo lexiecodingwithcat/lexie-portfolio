@@ -1,3 +1,6 @@
+"use client";
+
+import { useUserAuth } from "@/app/_utils/auth-context";
 import Comment from "./comment";
 function MyTestimonials() {
   const { user, googleSignIn, firebaseSignOut } = useUserAuth();
@@ -8,11 +11,18 @@ function MyTestimonials() {
     await firebaseSignOut();
   };
   return (
-    <div>
+    <div className="px-[20px]">
+      <div>
+        <h2 className="text-3xl font-semibold">Testimonials</h2>
+        <p className="text-[#808080] mt-5">
+          I thrive on debugging and solving complex problems, always seeking to
+          apply best practices to deliver high-quality projects.
+        </p>
+      </div>
       <div className="mt-10 text-lg">
         {user ? (
           <div>
-            <div>
+            <div className="flex justify-between items-center">
               <p>Welcome, {user.displayName}</p>
               <button
                 className="rounded-lg px-3 py-2 font-semibold mr-2 bg-white bg-opacity-5 text-white"
@@ -21,7 +31,6 @@ function MyTestimonials() {
                 Log out
               </button>
             </div>
-
             <Comment />
           </div>
         ) : (
@@ -36,6 +45,7 @@ function MyTestimonials() {
           </p>
         )}
       </div>
+      {/* display exsiting testmonials */}
     </div>
   );
 }
