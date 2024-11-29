@@ -3,6 +3,8 @@ import {
   collection,
   addDoc,
   getDocs,
+  deleteDoc,
+  doc,
   query,
   orderBy,
   Timestamp,
@@ -13,7 +15,7 @@ export async function getComments() {
   const q = query(collection(db, "messages"), orderBy("timestamp"));
   const querySnapshot = await getDocs(q);
   querySnapshot.forEach((doc) => {
-    comments.push(doc.data());
+    comments.push({ id: doc.id, ...doc.data() });
   });
   return comments;
 }
@@ -35,7 +37,17 @@ export async function addComment(user, comment) {
 }
 
 // delete comment
-export async function deleteComment(comment) {
+export async function deleteComment(user, comment) {
+  console.log("comment", comment);
+
+  if (!user || !user.uid) {
+    console.error("no user logged in");
+    return;
+  }
+  if (user.uid !== comment.userId) {
+    console.error("User does not have permission to delete this comment");
+    return;
+  }
   try {
     await deleteDoc(doc(db, "messages", comment.id));
   } catch (error) {
