@@ -11,11 +11,12 @@ function Comment({ prevComments, handlePrevComments }) {
     if (comment === "") {
       return;
     }
+    const newCommentId = addComment(user, comment);
     handlePrevComments([
       ...prevComments,
-      { comment, userName: user.displayName },
+      { id: newCommentId, comment, userName: user.displayName },
     ]);
-    addComment(user, comment);
+
     setComment("");
   }
 

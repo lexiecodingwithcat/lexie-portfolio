@@ -31,6 +31,7 @@ export async function addComment(user, comment) {
       comment,
       timestamp: Timestamp.now(),
     });
+    return doc.id;
   } catch (error) {
     console.error("faild to add", error);
   }

@@ -10,9 +10,9 @@ function ExistingTestmonial({ comments }) {
   };
 
   return (
-    <div className=" mt-5 text-[#1e1e1e] flex flex-col gap-5">
+    <ul className=" mt-5 text-[#1e1e1e] flex flex-col gap-5">
       {comments.map((comment) => (
-        <div
+        <li
           className="px-5 py-5 border bg-white rounded-md relative"
           key={comment.timestamp}
         >
@@ -28,9 +28,9 @@ function ExistingTestmonial({ comments }) {
           </div>
           <p>{comment.comment}</p>
           <p className="text-right">{comment.userName}</p>
-        </div>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }
 
