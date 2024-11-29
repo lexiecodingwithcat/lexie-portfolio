@@ -1,8 +1,11 @@
 "use client";
 import { addComment } from "@/_service/comments-service";
 import { useState } from "react";
+import { useUserAuth } from "@/_utils/auth-context";
 function Comment() {
+  const { user } = useUserAuth();
   const [comment, setComment] = useState("");
+
   async function addCommentHandler(e) {
     e.preventDefault();
 
@@ -10,8 +13,10 @@ function Comment() {
       return;
     }
     console.log(comment);
-    addComment(comment);
+    addComment(user, comment);
+    setComment("");
   }
+
   return (
     <div className="mt-5 flex gap-3 rounded-full bg-white px-3 py-2">
       <input

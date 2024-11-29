@@ -18,11 +18,19 @@ export async function getComments() {
   return comments;
 }
 
-export async function addComment(comment) {
-  await addDoc(collection(db, "comments"), {
-    userId: user.uid,
-    userName: user.displayName,
-    message: message,
-    timestamp: Timestamp.now(),
-  });
+export async function addComment(user, comment) {
+  const userId = user.uid;
+  const userName = user.displayName;
+  console.log("userId", userId);
+  console.log("userName", userName);
+  try {
+    await addDoc(collection(db, "messages"), {
+      userId,
+      userName,
+      comment,
+      timestamp: Timestamp.now(),
+    });
+  } catch (error) {
+    console.error("添加评论时出错:", error);
+  }
 }
