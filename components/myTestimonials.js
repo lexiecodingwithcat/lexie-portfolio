@@ -11,7 +11,7 @@ function MyTestimonials() {
   useEffect(() => {
     const fetchData = async () => {
       const comments = await getComments();
-      console.log(comments);
+      // console.log(comments);
       setComments(comments);
     };
     fetchData();

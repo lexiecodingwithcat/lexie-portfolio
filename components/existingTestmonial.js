@@ -7,8 +7,6 @@ function ExistingTestmonial({ comments, setComments }) {
   const handleDeleteComment = async (comment) => {
     console.log("delete comment:", comment.id);
     deleteComment(user, comment);
-    // const updatedComments = await getComments();
-    // setComments(updatedComments);
     setComments((prevComments) =>
       prevComments.filter((prevComment) => prevComment.id !== comment.id)
     );
