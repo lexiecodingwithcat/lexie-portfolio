@@ -1,10 +1,22 @@
 "use client";
-
+import { useEffect, useState } from "react";
 import { useUserAuth } from "@/_utils/auth-context";
 import Comment from "./comment";
 import ExistingTestmonial from "./existingTestmonial";
+import { getComments } from "@/_service/comments-service";
+
 function MyTestimonials() {
   const { user, googleSignIn, firebaseSignOut } = useUserAuth();
+  const [comments, setComments] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const comments = await getComments();
+      console.log(comments);
+      setComments(comments);
+    };
+    fetchData();
+  }, []);
+
   const logIn = async function () {
     await googleSignIn();
   };
@@ -32,7 +44,8 @@ function MyTestimonials() {
                 Log out
               </button>
             </div>
-            <Comment />
+            {/* add new testimonials */}
+            <Comment handlePrevComments={setComments} prevComments={comments} />
           </div>
         ) : (
           <p>
@@ -47,7 +60,7 @@ function MyTestimonials() {
         )}
       </div>
       {/* display exsiting testmonials */}
-      <ExistingTestmonial />
+      <ExistingTestmonial comments={comments} />
     </div>
   );
 }

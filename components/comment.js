@@ -2,7 +2,7 @@
 import { addComment } from "@/_service/comments-service";
 import { useState } from "react";
 import { useUserAuth } from "@/_utils/auth-context";
-function Comment() {
+function Comment({ prevComments, handlePrevComments }) {
   const { user } = useUserAuth();
   const [comment, setComment] = useState("");
 
@@ -12,7 +12,11 @@ function Comment() {
     if (comment === "") {
       return;
     }
-    console.log(comment);
+    // console.log(comment);
+    handlePrevComments([
+      ...prevComments,
+      { comment, userName: user.displayName },
+    ]);
     addComment(user, comment);
     setComment("");
   }
