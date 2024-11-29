@@ -21,8 +21,7 @@ export async function getComments() {
 export async function addComment(user, comment) {
   const userId = user.uid;
   const userName = user.displayName;
-  //   console.log("userId", userId);
-  //   console.log("userName", userName);
+
   try {
     await addDoc(collection(db, "messages"), {
       userId,

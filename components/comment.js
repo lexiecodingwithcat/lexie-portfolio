@@ -8,11 +8,9 @@ function Comment({ prevComments, handlePrevComments }) {
 
   async function addCommentHandler(e) {
     e.preventDefault();
-
     if (comment === "") {
       return;
     }
-    // console.log(comment);
     handlePrevComments([
       ...prevComments,
       { comment, userName: user.displayName },

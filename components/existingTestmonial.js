@@ -7,7 +7,7 @@ function ExistingTestmonial({ comments }) {
           key={comment.timestamp}
         >
           <p>{comment.comment}</p>
-          <p>from: {comment.userName}</p>
+          <p className="text-right">{comment.userName}</p>
         </div>
       ))}
     </div>
