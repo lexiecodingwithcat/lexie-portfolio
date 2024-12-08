@@ -7,7 +7,6 @@ import ResumeContent from "@/components/resumeContent";
 function Resume() {
   const [activeTab, setActiveTab] = useState("Experience");
   function handleActiveTab(tab) {
-    // console.log(tab);
     setActiveTab(tab);
   }
   return (
