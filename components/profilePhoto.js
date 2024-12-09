@@ -1,6 +1,4 @@
-// "use client";
 import Image from "next/image";
-// import ThreeDCube from "./threeDCube";
 
 function ProfilePhoto() {
   const photoPath = "/images/lexie.jpg";
@@ -14,7 +12,6 @@ function ProfilePhoto() {
           layout="fill"
           className="rounded-full object-cover"
         />
-        {/* <ThreeDCube photo={photoPath} /> */}
       </div>
     </div>
   );
